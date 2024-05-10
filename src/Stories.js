@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useGlobalContext } from './Context'
 const Stories = () => {
   const {hits,isLoading,removePost}=useGlobalContext();
@@ -23,8 +23,8 @@ const Stories = () => {
                 By <span>{author}</span> | <span>{num_comments}</span> comments
               </p>
               <div className="card-button">
-                <a href={url} target="_blank">Read More</a>
-                <a href="#" onClick={()=>removePost(objectId)}>Remove</a>
+                <a href={url} target="_blank" rel="noreferrer">Read More</a>
+                <a onClick={()=>removePost(objectId)}>Remove</a>
               </div>
             </div>
         );

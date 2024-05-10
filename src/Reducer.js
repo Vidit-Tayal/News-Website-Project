@@ -18,7 +18,7 @@ const reducer=(state,action)=>
         return{
             ...state,
             hits:state.hits.filter((curElem)=>{
-                return curElem.objectID!=action.payload;
+                return curElem.objectID!==action.payload;
             })
         }
         case "SEARCH_QUERY":
@@ -46,6 +46,8 @@ const reducer=(state,action)=>
                         ...state,
                         page:page_inc,
                     }
+        default :
+            break
     }
     return state;
 };
